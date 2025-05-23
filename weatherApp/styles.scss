@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+//colors
+$mainColor: #0B1215;
+$subMainColor: #800000;
+$textColor: #FAF0E6;
+
+//font stack
+$fontFamily: 'Poppins', sans-serif;
+$fontSize1: 50px;
+$fontSize2: 30px;
+
+body{
+  background-color: $mainColor;
+
+  .mainFrame{
+    background:linear-gradient(135deg,$mainColor,$subMainColor);
+    border-radius: 20px;
+    margin:100px auto 0;
+    width:50%;
+
+    .searchBox{
+      display:flex;
+      justify-content:center;
+      font-family: $fontFamily;
+
+      .search{
+        background:linear-gradient(135deg, $subMainColor, $mainColor);
+        color:$textColor;
+        text-align:center;
+        border-radius: 100px;
+        border:none;
+        width:60%;
+        margin-top: 10px;
+        &::placeholder{
+          color:$textColor;
+          text-align: center;
+        }
+         // Cross-browser compatibility for older browsers (still good practice to include)
+        &::-webkit-input-placeholder {
+          color: $textColor;
+          opacity: 1;
+          text-align: center;
+        }
+        &::-moz-placeholder {
+          color: $textColor;
+          opacity: 1;
+          text-align: center;
+        }
+        &:-ms-input-placeholder {
+          color: $textColor;
+          text-align: center;
+        }
+      }
+      button{
+        background:transparent;
+        border:none;
+         .searchIcon{
+        color:$mainColor;
+      }
+      }
+
+    }
+    .error{
+      display:none;
+      justify-content: center;
+      align-items: center;
+      color: red;
+      font-family: $fontFamily;
+    }
+    .weather{
+      display:none;
+      .weatherIcon{
+      justify-content: center;
+      display: flex;
+    }
+      .temperature{
+      color: $textColor;
+      font-family: $fontFamily;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $fontSize1;
+    }
+
+      .city{
+      color: $textColor;
+      font-size: $fontSize2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+      .more{
+      display: flex;
+      .humidity{
+        color: $textColor;
+        font-family: $fontFamily;
+        display: flex;
+        margin: 5%;
+        padding: 10%;
+        justify-content: left;
+        align-items: center;
+      .humid{
+        margin-right: 20px;
+      }
+      .exp{
+        font-size: $fontSize2;
+      }
+    }
+      .windSpeed{
+        justify-content: right;
+        display: flex;
+        color: $textColor;
+        align-items: center;
+        font-family: $fontFamily;
+        margin: 5%;
+        padding: 10%;
+        .speed{
+          margin-right: 5%;
+        }
+        .exp2{
+          font-size: $fontSize2;
+
+        }
+
+    }
+    }
+    }
+
+
+
+  }
+
+
+}
