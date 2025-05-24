@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shadow</title>
     <link rel="stylesheet" href="styles.css">
@@ -14,34 +13,59 @@
 <div id="mainFrame" class="mainFrame">
     <div id="searchBox" class="searchBox">
         <input type="text" spellcheck="false" id="search" class="search" placeholder="Enter City Name or Zipcode">
-        <button class="searchIcon" id="searchIcon"><image src="images/icons8-search.svg" ></image></button>
+        <button class="searchIcon" id="searchIcon">
+            <image src="images/search.png" class="icon"></image>
+        </button>
     </div>
-
     <div class="error" id="error">
         <p id="invalid" class="invalid">Invalid City Name</p>
     </div>
     <div class="weather" id="weather">
-
         <div id="weatherIcon" class="weatherIcon">
-        <image src="images/clouds.png" class="icon" id="icon"></image>
-    </div>
+            <image src="images/clouds.png" class="icon" id="icon"></image>
+        </div>
         <div id="temperature"   class="temperature">
-        <p id="digits" class="digits">22&degC</p>
-    </div>
-        <div id="city" class="city">
-        <p id="name" class="name">Nairobi</p>
-    </div>
-        <div id="more" class="more">
-        <div id="humidity" class="humidity">
-        <image id="humid" class="humid" src="images/humidity.png"></image>
-        <p class="exp" id="exp">48% <br>humidity</p>
-    </div>
+            <p id="digits" class="digits">22&degC</p>
+        </div>
+        <div class="coordinates" id="coordinates">
+            <div class="lattitude" id="lattitude">
+                <h1>Lattitude</h1>
+                <p class="lat" id="lat"></p>
+            </div>
+            <div class="longitude" id="longitude">
+                <h1>Longitude</h1>
+                <p class="long" id="long"></p>
+            </div>
 
-    <div id="windSpeed" class="windSpeed">
-        <image id="speed" class="speed" src="images/wind.png"></image>
-        <p class="exp2" id="exp2">10.29km/hr <br>Wind Speed</p>
-    </div>
-   </div>
+        </div>
+        <div id="city" class="city">
+            <p id="name" class="name">Nairobi</p>
+        </div>
+        <div id="more" class="more">
+            <div id="humidity" class="humidity">
+                <image id="humid" class="humid" src="images/humidity.png"></image>
+                <div class="humidityAlignment">
+                    <p class="exp" id="exp">48%</p>
+                    <h1>Humidity</h1>
+                </div>
+
+            </div>
+            <div class="pressure" id="pressure">
+                <image id="pressure" class="pressure" src="images/wind.png"></image>
+                <div class="pressureAlignment">
+                    <p class="exp1" id="exp1"></p>
+                    <h1>Pressure</h1>
+                </div>
+            </div>
+            <div id="windSpeed" class="windSpeed">
+                <image id="speed" class="speed" src="images/wind.png"></image>
+                <div class="windSpeedAlignment">
+                    <p class="exp2" id="exp2">10.29km/hr</p>
+                    <h1>Wind Speed</h1>
+                </div>
+
+            </div>
+        </div>
     </div>
 
 </div>

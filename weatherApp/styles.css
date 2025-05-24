@@ -18,6 +18,7 @@ body .mainFrame .searchBox {
   display: flex;
   justify-content: center;
   font-family: "Poppins", sans-serif;
+  margin: 20px;
 }
 body .mainFrame .searchBox .search {
   background: linear-gradient(135deg, #800000, #0B1215);
@@ -27,6 +28,7 @@ body .mainFrame .searchBox .search {
   border: none;
   width: 60%;
   margin-top: 10px;
+  margin-right: 10px;
 }
 body .mainFrame .searchBox .search::placeholder {
   color: #FAF0E6;
@@ -46,12 +48,11 @@ body .mainFrame .searchBox .search:-ms-input-placeholder {
   color: #FAF0E6;
   text-align: center;
 }
-body .mainFrame .searchBox button {
+body .mainFrame .searchBox .searchIcon {
   background: transparent;
   border: none;
-}
-body .mainFrame .searchBox button .searchIcon {
   color: #0B1215;
+  margin-top: 10px;
 }
 body .mainFrame .error {
   display: none;
@@ -75,6 +76,16 @@ body .mainFrame .weather .temperature {
   align-items: center;
   font-size: 50px;
 }
+body .mainFrame .weather .coordinates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  color: #FAF0E6;
+}
+body .mainFrame .weather .coordinates .lattitude {
+  margin: 20px;
+}
 body .mainFrame .weather .city {
   color: #FAF0E6;
   font-size: 30px;
@@ -84,20 +95,39 @@ body .mainFrame .weather .city {
 }
 body .mainFrame .weather .more {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 body .mainFrame .weather .more .humidity {
   color: #FAF0E6;
   font-family: "Poppins", sans-serif;
   display: flex;
-  margin: 5%;
-  padding: 10%;
   justify-content: left;
   align-items: center;
+  padding: 20px;
 }
 body .mainFrame .weather .more .humidity .humid {
   margin-right: 20px;
 }
-body .mainFrame .weather .more .humidity .exp {
+body .mainFrame .weather .more .humidity .humidityAlignment {
+  display: inline-block;
+}
+body .mainFrame .weather .more .humidity .humidityAlignment .exp {
+  font-size: 30px;
+}
+body .mainFrame .weather .more .humidity .humidityAlignment h1 {
+  color: #FAF0E6;
+  align-content: center;
+  justify-content: left;
+}
+body .mainFrame .weather .more .pressure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FAF0E6;
+  padding: 20px;
+}
+body .mainFrame .weather .more .pressure .exp1 {
   font-size: 30px;
 }
 body .mainFrame .weather .more .windSpeed {
@@ -106,14 +136,74 @@ body .mainFrame .weather .more .windSpeed {
   color: #FAF0E6;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  margin: 5%;
-  padding: 10%;
+  padding: 20px;
 }
 body .mainFrame .weather .more .windSpeed .speed {
   margin-right: 5%;
 }
-body .mainFrame .weather .more .windSpeed .exp2 {
+body .mainFrame .weather .more .windSpeed .windSpeedAlignment {
+  display: inline-block;
+}
+body .mainFrame .weather .more .windSpeed .windSpeedAlignment .exp2 {
   font-size: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  body .mainFrame {
+    width: 90%;
+  }
+  body .mainFrame .searchBox .search {
+    width: 80%;
+    font-size: 5px;
+    text-align: center;
+  }
+  body .mainFrame .searchBox .searchIcon .icon {
+    width: 24px;
+    height: 24px;
+  }
+  body .mainFrame .weather .temperature {
+    font-size: 30px;
+  }
+  body .mainFrame .weather .city {
+    font-size: 24px;
+  }
+  body .mainFrame .weather .more {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+    margin-top: 20px;
+  }
+  body .mainFrame .weather .more .humidity,
+  body .mainFrame .weather .more .pressure,
+  body .mainFrame .weather .more .windSpeed {
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 15px;
+    justify-content: center;
+    text-align: center;
+    position: static;
+    left: auto;
+  }
+  body .mainFrame .weather .more .humidity .humid,
+  body .mainFrame .weather .more .pressure img,
+  body .mainFrame .weather .more .windSpeed .speed {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  body .mainFrame .weather .more .humidityAlignment,
+  body .mainFrame .weather .more .pressureAlignment,
+  body .mainFrame .weather .more .windSpeedAlignment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body .mainFrame .weather .more .exp, body .mainFrame .weather .more .exp1, body .mainFrame .weather .more .exp2 {
+    font-size: 24px;
+  }
+  body .mainFrame .weather .more h1 {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

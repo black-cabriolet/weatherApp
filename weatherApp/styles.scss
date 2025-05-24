@@ -14,6 +14,8 @@ $textColor: #FAF0E6;
 $fontFamily: 'Poppins', sans-serif;
 $fontSize1: 50px;
 $fontSize2: 30px;
+//font for responsive screns.
+$fontSize3:5px;
 
 body{
   background-color: $mainColor;
@@ -28,6 +30,8 @@ body{
       display:flex;
       justify-content:center;
       font-family: $fontFamily;
+      margin:20px;
+
 
       .search{
         background:linear-gradient(135deg, $subMainColor, $mainColor);
@@ -37,6 +41,7 @@ body{
         border:none;
         width:60%;
         margin-top: 10px;
+        margin-right: 10px;
         &::placeholder{
           color:$textColor;
           text-align: center;
@@ -57,12 +62,11 @@ body{
           text-align: center;
         }
       }
-      button{
+      .searchIcon{
         background:transparent;
         border:none;
-         .searchIcon{
-        color:$mainColor;
-      }
+        color: $mainColor;
+        margin-top: 10px;
       }
 
     }
@@ -74,6 +78,7 @@ body{
       font-family: $fontFamily;
     }
     .weather{
+      //have to return back to none.
       display:none;
       .weatherIcon{
       justify-content: center;
@@ -87,7 +92,17 @@ body{
       align-items: center;
       font-size: $fontSize1;
     }
+      .coordinates{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+        color: $textColor;
 
+        .lattitude{
+          margin:20px;
+        }
+      }
       .city{
       color: $textColor;
       font-size: $fontSize2;
@@ -96,45 +111,141 @@ body{
       align-items: center;
     }
       .more{
-      display: flex;
-      .humidity{
-        color: $textColor;
-        font-family: $fontFamily;
         display: flex;
-        margin: 5%;
-        padding: 10%;
-        justify-content: left;
+        justify-content: center;
         align-items: center;
-      .humid{
-        margin-right: 20px;
-      }
-      .exp{
-        font-size: $fontSize2;
-      }
+
+        .humidity{
+          color: $textColor;
+          font-family: $fontFamily;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          padding: 20px;
+
+          .humid{
+            margin-right: 20px;
+          }
+          .humidityAlignment{
+            display: inline-block;
+            .exp{
+              font-size: $fontSize2;
+            }
+            h1{
+              color: $textColor;
+              align-content: center;
+              justify-content: left;
+            }
+          }
+
     }
-      .windSpeed{
-        justify-content: right;
-        display: flex;
-        color: $textColor;
-        align-items: center;
-        font-family: $fontFamily;
-        margin: 5%;
-        padding: 10%;
-        .speed{
-          margin-right: 5%;
+        .pressure{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $textColor;
+          padding: 20px;
+          .exp1{
+            font-size: $fontSize2;
+          }
         }
-        .exp2{
-          font-size: $fontSize2;
+        .windSpeed{
+          justify-content: right;
+          display: flex;
+          color: $textColor;
+          align-items: center;
+          font-family: $fontFamily;
+          padding: 20px;
 
+          .speed{
+            margin-right: 5%;
+          }
+          .windSpeedAlignment{
+            display: inline-block;
+            .exp2{
+              font-size: $fontSize2;
+
+            }
         }
-
     }
     }
     }
-
-
-
   }
-
-
 }
+
+// --- Media Queries for 768px and below ---
+@media screen and (max-width: 768px) {
+  body {
+    .mainFrame {
+      width: 90%; // mainFrame takes more width on smaller screens
+
+      .searchBox {
+        .search {
+          width: 80%; // Make the search input wider
+          font-size: $fontSize3; // Use the responsive font size
+          text-align: center; // Keep text centered
+        }
+
+        .searchIcon {
+          .icon {
+            width: 24px; // Adjust icon size to be visible
+            height: 24px;
+          }
+        }
+      }
+
+      .weather {
+        .temperature {
+          font-size: $fontSize2; // Adjust temperature font size for smaller screens
+        }
+        .city {
+            font-size: 24px; // Specific smaller font size for city
+        }
+
+        .more {
+          flex-direction: column; // Stack humidity, pressure, windSpeed vertically
+          align-items: center; // Center items horizontally when stacked
+          padding: 0 15px; // Add some side padding
+          margin-top: 20px; // Add some space above the more section
+
+          .humidity,
+          .pressure,
+          .windSpeed {
+            width: 90%; // Each item takes up more width
+            margin-bottom: 20px; // Space between stacked items
+            padding: 15px; // Slightly less padding
+            justify-content: center; // Center content within each item
+            text-align: center; // Center text within each item
+            // Reset position to static to keep it in the normal flow
+            position: static;
+            left: auto;
+          }
+
+          .humidity .humid,
+          .pressure img, // Assuming .pressure has an img like .humid
+          .windSpeed .speed {
+            margin-right: 15px; // Adjust margin for icons
+            width: 40px; // Make icons smaller
+            height: 40px;
+          }
+
+          .humidityAlignment,
+          .pressureAlignment,
+          .windSpeedAlignment {
+            display: flex; // Use flex for better alignment of text and value
+            flex-direction: column;
+            align-items: flex-start; // Align text to the start within its column
+          }
+          .exp, .exp1, .exp2 {
+            font-size: 24px; // Adjust value font size
+          }
+          h1 {
+            font-size: 16px; // Adjust heading font size
+          }
+        }
+      }
+    }
+  }
+}
+
+

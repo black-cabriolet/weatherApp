@@ -18,7 +18,10 @@ async function checkWeather(city){
         document.getElementById('name').innerText = data.name;
         document.getElementById('digits').innerText=Math.round(data.main.temp)+"°C";
         document.getElementById('exp').innerText=data.main.humidity+"%";
-        document.getElementById('exp2').innerText=data.wind.speed+" km/hr";
+        document.getElementById('exp2').innerText=data.wind.speed+"km/hr";
+        document.getElementById('lat').innerText=data.coord.lat;
+        document.getElementById('long').innerText=data.coord.lon;
+        document.getElementById('exp1').innerText=data.main.pressure+"hPa";
 
         if (data.weather[0].main == "Clouds"){
             weatherIcon.src = "images/clouds.png";
@@ -42,4 +45,6 @@ async function checkWeather(city){
 
 searchBtn.addEventListener("click", ()=>{
     checkWeather(searchBox.value);
+
 })
+checkWeather("london");
